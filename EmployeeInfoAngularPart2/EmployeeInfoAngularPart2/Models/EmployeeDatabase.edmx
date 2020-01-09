@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeeCJ2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EmployeeCJ2.dbo.EmployeeDB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EmployeeDB">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeStatus" Type="varchar(max)" />
+          <Property Name="EmployeeID" Type="varchar(max)" Nullable="false" />
+          <Property Name="SSSNumber" Type="varchar(max)" />
+          <Property Name="TINNumber" Type="varchar(max)" />
+          <Property Name="UserName" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Password" Type="varchar(max)" />
+          <Property Name="Honorifics" Type="varchar(max)" />
+          <Property Name="FirstName" Type="varchar(max)" />
+          <Property Name="MiddleName" Type="varchar(max)" />
+          <Property Name="LastName" Type="varchar(max)" />
+          <Property Name="EmergencyName" Type="varchar(max)" />
+          <Property Name="EmergencyAddress" Type="varchar(max)" />
+          <Property Name="EmergencyContact" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="EmployeeCJ2ModelStoreContainer">
+          <EntitySet Name="EmployeeDB" EntityType="Self.EmployeeDB" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EmployeeDB].[EmployeeStatus] AS [EmployeeStatus], 
+    [EmployeeDB].[EmployeeID] AS [EmployeeID], 
+    [EmployeeDB].[SSSNumber] AS [SSSNumber], 
+    [EmployeeDB].[TINNumber] AS [TINNumber], 
+    [EmployeeDB].[UserName] AS [UserName], 
+    [EmployeeDB].[Email] AS [Email], 
+    [EmployeeDB].[Password] AS [Password], 
+    [EmployeeDB].[Honorifics] AS [Honorifics], 
+    [EmployeeDB].[FirstName] AS [FirstName], 
+    [EmployeeDB].[MiddleName] AS [MiddleName], 
+    [EmployeeDB].[LastName] AS [LastName], 
+    [EmployeeDB].[EmergencyName] AS [EmergencyName], 
+    [EmployeeDB].[EmergencyAddress] AS [EmergencyAddress], 
+    [EmployeeDB].[EmergencyContact] AS [EmergencyContact]
+    FROM [dbo].[EmployeeDB] AS [EmployeeDB]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeCJ2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EmployeeDB">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SSSNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TINNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Honorifics" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="EmployeeCJ2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeDBs" EntityType="Self.EmployeeDB" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeCJ2ModelStoreContainer" CdmEntityContainer="EmployeeCJ2Entities">
+          <EntitySetMapping Name="EmployeeDBs">
+            <EntityTypeMapping TypeName="EmployeeCJ2Model.EmployeeDB">
+              <MappingFragment StoreEntitySet="EmployeeDB">
+                <ScalarProperty Name="EmployeeStatus" ColumnName="EmployeeStatus" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="SSSNumber" ColumnName="SSSNumber" />
+                <ScalarProperty Name="TINNumber" ColumnName="TINNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Honorifics" ColumnName="Honorifics" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmergencyName" ColumnName="EmergencyName" />
+                <ScalarProperty Name="EmergencyAddress" ColumnName="EmergencyAddress" />
+                <ScalarProperty Name="EmergencyContact" ColumnName="EmergencyContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
